@@ -21,7 +21,7 @@
 # Optional eslint cache
 .eslintcache
 
-.idea/
+/.idea
 
 
 npm-debug.log*
