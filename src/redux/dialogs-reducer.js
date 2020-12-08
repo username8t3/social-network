@@ -3,9 +3,9 @@ const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let initialState = {
     messages: [
-        {id: 1, message: 'Hi'},
-        {id: 2, message: 'Hi Hi'},
-        {id: 3, message: 'Hi Hi Hi Hi'},
+        {id: 1, message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, vero.'},
+        {id: 2, message: 'Lorem ipsum dolor sit amet.'},
+        {id: 3, message: 'Lorem ipsum dolor sit amet, consectetur adipisicing.'},
         {id: 4, message: 'Hi Hi Hi Hi Hi Hi'},
         {id: 5, message: 'Hi Hi Hi Hi Hi Hi Hi Hi'},
     ],
