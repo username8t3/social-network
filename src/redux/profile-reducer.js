@@ -1,12 +1,15 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
 let initialState = {
     posts: [
         {id: 1, message: 'Hi,  how are you?', likesCount: 12},
         {id: 2, message: 'iam fine thanks', likesCount: 10}
     ],
-    newPostText: 'New text.'
+    newPostText: 'New text.',
+    // Устанавливаем начальное состояние открытого профиля
+    profile: null
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -32,13 +35,23 @@ const profileReducer = (state = initialState, action) => {
             };
         }
 
+        case SET_USER_PROFILE: {
+            // Копируем стейт, добавляем профайл.
+            return {...state, profile: action.profile};
+        }
+
         default:
             return state;
     }
 }
 
+// Action Creator - Ф-ция возрощающая объект (Action).
+// Action - объект содержащий все данные для Reducers,
+// Который меняет свой стейт.
 export const addPostActionCreator = () => ({type: ADD_POST})
 export const updateNewPostTextActionCreator = (text) =>
     ({type: UPDATE_NEW_POST_TEXT, newText: text})
+export const setUserProfile = (profile) =>
+    ({type: SET_USER_PROFILE, profile})
 
 export default profileReducer;
